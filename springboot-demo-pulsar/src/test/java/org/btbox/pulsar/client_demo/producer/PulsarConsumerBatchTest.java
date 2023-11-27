@@ -1,4 +1,4 @@
-package org.btbox.pulsar.producer;
+package org.btbox.pulsar.client_demo.producer;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;

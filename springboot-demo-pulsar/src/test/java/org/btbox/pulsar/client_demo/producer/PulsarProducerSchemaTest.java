@@ -1,9 +1,8 @@
-package org.btbox.pulsar.producer;
+package org.btbox.pulsar.client_demo.producer;
 
 import lombok.SneakyThrows;
 import org.apache.pulsar.client.api.Producer;
 import org.apache.pulsar.client.api.PulsarClient;
-import org.apache.pulsar.client.api.Schema;
 import org.apache.pulsar.client.impl.schema.AvroSchema;
 import org.btbox.pulsar.pojo.User;
 import org.junit.jupiter.api.Test;

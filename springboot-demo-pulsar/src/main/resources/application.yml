@@ -1,0 +1,10 @@
+spring:
+  pulsar:
+    administration:
+      service-url: http://10.1.1.30:8081
+    client:
+      service-url: pulsar://10.1.1.30:6650
+    producer:
+      batching-enabled: true
+      batching-max-messages: 10
+#      batching-max-publish-delay: 3000

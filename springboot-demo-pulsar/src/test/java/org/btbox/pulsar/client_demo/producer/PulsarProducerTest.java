@@ -1,4 +1,4 @@
-package org.btbox.pulsar.producer;
+package org.btbox.pulsar.client_demo.producer;
 
 import lombok.SneakyThrows;
 import org.apache.pulsar.client.api.Producer;
@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import java.util.concurrent.TimeUnit;
 
 import static org.btbox.pulsar.common.PulsarCommon.SERVICE_HTTP_URL_6650;
-import static org.btbox.pulsar.common.PulsarCommon.SERVICE_HTTP_URL_8080;
 
 /**
  * @description:

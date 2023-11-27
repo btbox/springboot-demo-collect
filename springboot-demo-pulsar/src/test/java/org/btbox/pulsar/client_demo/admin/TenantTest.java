@@ -1,4 +1,4 @@
-package org.btbox.pulsar.admin;
+package org.btbox.pulsar.client_demo.admin;
 
 import lombok.SneakyThrows;
 import org.apache.pulsar.client.admin.PulsarAdmin;
