@@ -9,6 +9,7 @@
     <name>springboot-demo-collect</name>
     <modules>
         <module>springboot-demo-pulsar</module>
+        <module>springboot-demo-kafka</module>
     </modules>
 
     <properties>
