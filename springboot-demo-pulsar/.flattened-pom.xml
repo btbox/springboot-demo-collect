@@ -26,7 +26,32 @@
       <artifactId>pulsar-functions-api</artifactId>
       <version>${pulsar.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.pulsar</groupId>
+      <artifactId>spring-pulsar-spring-boot-starter</artifactId>
+      <version>1.0.0</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.pulsar</groupId>
+          <artifactId>pulsar-client-all</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <id>public</id>
+      <name>huawei nexus</name>
+      <url>https://mirrors.huaweicloud.com/repository/maven/</url>
+    </repository>
+  </repositories>
   <build>
     <finalName>${project.artifactId}</finalName>
     <plugins>

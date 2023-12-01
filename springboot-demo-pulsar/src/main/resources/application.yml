@@ -6,5 +6,5 @@ spring:
       service-url: pulsar://10.1.1.30:6650
     producer:
       batching-enabled: true
-      batching-max-messages: 10
+      batching-max-messages: 1
 #      batching-max-publish-delay: 3000

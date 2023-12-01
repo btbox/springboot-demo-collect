@@ -24,14 +24,14 @@ public class ProducerTest {
     @SneakyThrows
     public void send() {
 
-        // for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 50; i++) {
             User user = new User();
             user.setName("btbox");
             user.setAge(20);
             user.setAddress("北京");
             pulsarTemplate.send("persistent://btbox_pulsar_t/btbox_pulsar_n/t_user1", user);
 
-        // }
+        }
     }
 
 }
