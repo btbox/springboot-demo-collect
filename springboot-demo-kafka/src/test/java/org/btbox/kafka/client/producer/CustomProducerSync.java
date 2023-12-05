@@ -29,7 +29,7 @@ public class CustomProducerSync {
         // 2. 发送数据
         for (int i = 0; i < 5; i++) {
             // get() 同步发送
-            producer.send(new ProducerRecord<>("first", "btbox-" + i)).get();
+            producer.send(new ProducerRecord<>("topic_c", "btbox-" + i)).get();
         }
 
         // 3. 关闭资源

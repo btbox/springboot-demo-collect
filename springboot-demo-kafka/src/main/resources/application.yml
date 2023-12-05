@@ -1,0 +1,13 @@
+spring:
+  kafka:
+    # 连接集群
+    bootstrap-servers: 10.1.1.68:19092,10.1.1.68:29092,10.1.1.68:39092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: btbox-group
+    listener:
+      missing-topics-fatal: false
