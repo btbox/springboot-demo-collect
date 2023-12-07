@@ -2,10 +2,11 @@ package org.btbox.kafka.client.producer;
 
 import lombok.SneakyThrows;
 import org.apache.kafka.clients.producer.*;
+import org.apache.kafka.common.Cluster;
 import org.apache.kafka.common.serialization.StringSerializer;
-import org.btbox.kafka.MyPartitioner;
 import org.junit.jupiter.api.Test;
 
+import java.util.Map;
 import java.util.Properties;
 
 import static org.btbox.kafka.client.common.CommonConstant.CLUSTER_SERVICE_URL;
@@ -87,6 +88,36 @@ public class CustomProducerAsyncPartitions {
 
         // 3. 关闭资源
         producer.close();
+    }
+
+    /**
+     * 自定义分区器
+     */
+    public static class MyPartitioner implements Partitioner {
+        @Override
+        public int partition(String topic, Object key, byte[] keyBytes, Object value, byte[] valueBytes, Cluster cluster) {
+            // 获取数据
+            String msgValues = value.toString();
+
+            int partition;
+            if (msgValues.contains("btbox")) {
+                partition = 0;
+            } else {
+                partition = 1;
+            }
+
+            return partition;
+        }
+
+        @Override
+        public void close() {
+
+        }
+
+        @Override
+        public void configure(Map<String, ?> configs) {
+
+        }
     }
 
 }

@@ -3,7 +3,6 @@ package org.btbox.kafka.client.producer;
 import lombok.SneakyThrows;
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
-import org.btbox.kafka.MyPartitioner;
 import org.junit.jupiter.api.Test;
 
 import java.util.Properties;
