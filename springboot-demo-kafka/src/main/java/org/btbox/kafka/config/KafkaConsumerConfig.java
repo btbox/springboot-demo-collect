@@ -46,7 +46,7 @@ public class KafkaConsumerConfig {
     @Bean
     public Map<String, Object> consumerConfigs() {
         Map<String, Object> propsMap = new HashMap<>(16);
-        propsMap.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+        propsMap.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "bootstrapServers");
         propsMap.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
         // 是否自动提交偏移量，默认值是true，为了避免出现重复数据和数据丢失，可以把它设置为false，然后手动提交偏移量
         propsMap.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, enableAutoCommit);
@@ -95,7 +95,7 @@ public class KafkaConsumerConfig {
         factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
         factory.getContainerProperties().setPollTimeout(pollTimeout);
         // 设置为批量监听，需要用List接收
-        factory.setBatchListener(true);
+        // factory.setBatchListener(true);
         return factory;
     }
 }

@@ -2,11 +2,18 @@ spring:
   kafka:
     # kafka集群信息
     bootstrap-servers: 10.1.1.68:19092,10.1.1.68:29092,10.1.1.68:39092
+    retry:
+      topic:
+        enabled: false
+        attempts: 4
+        delay: 3
+        multiplier: 0
+
     # 生产者配置
     producer:
       # 开启事务，必须在开启了事务的方法中发送，否则报错
       transaction-id-prefix: kafka-tx-
-      # 设置大于0的值，则客户端会将发送失败的记录重新发送,开启事务必须设置大于0
+      # 设置大于0的值，则客户端会将发送失败的记录重新发送,开启事务必须设置大于0,默认值整形最大数
       retries: 3
       # 当有多个消息需要被发送到同一个分区时，生产者会把它们放在同一个批次里。该参数指定了一个批次可以使用的内存大小，按照字节数计算。16M
       batch-size: 16384
@@ -32,6 +39,12 @@ spring:
         compression.type: lz4
         # 是否开启幂等，开启幂等后 acks 默认为all/-1如果设置为0或1则直接启动报错
         enable.idempotence: true
+        # 重试间隔 经验值：20000。默认值：1000,设置此项，使其过段时间后再重试，这时网络可能已经好了。重试若间隔太近，短时间网络还没好，会浪费了重试次数
+        retry.backoff.ms: 20000
+        # 该参数表示Kafka客户端重连的最大时间，每次连接失败，重连时间都会成指数级增加，每次增加的时间会在20%随机浮动，以避免连接风暴出现
+        # reconnect.backoff.max.ms
+        # 客户端重连kafka间隔,经验值：20000。默认值：50
+        reconnect.backoff.ms: 20000
     # 消费者配置
     consumer:
       # 消费者组名称

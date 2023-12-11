@@ -42,4 +42,18 @@ public class ProducerController {
 
     }
 
+    @PostMapping("send2")
+    @Transactional
+    public void send2() {
+        for (int i = 0; i < 1; i++) {
+            Person person = new Person();
+            person.setAge(i);
+            person.setUsername("name-" + i);
+            // 需要添加@Transactional否则报错
+            // No transaction is in process; possible solutions: run the template operation within the scope of a template.executeInTransaction() operation, start a transaction with @Transactional before invoking the template method, run in a transaction started by a listener container when consuming a record
+            kafkaTemplate.send("topic-dlt-test", person);
+
+        }
+
+    }
 }
