@@ -2,13 +2,6 @@ spring:
   kafka:
     # kafka集群信息
     bootstrap-servers: 10.1.1.68:19092,10.1.1.68:29092,10.1.1.68:39092
-    retry:
-      topic:
-        enabled: false
-        attempts: 4
-        delay: 3
-        multiplier: 0
-
     # 生产者配置
     producer:
       # 开启事务，必须在开启了事务的方法中发送，否则报错

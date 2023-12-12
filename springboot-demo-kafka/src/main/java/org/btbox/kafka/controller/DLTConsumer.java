@@ -37,17 +37,17 @@ public class DLTConsumer {
             attempts = "4",
             backoff = @Backoff(delay = 3000, multiplier = 0)
     )
-    // @Transactional
     @KafkaListener(topics = "topic-dlt-test")
-    public void onMessage(Person msgs, Acknowledgment ack) {
+    public void t(Person msgs, Acknowledgment ack) {
         log.info("[onMessage][消息内容：{}]", msgs);
-        // int i = 1/0;
+        // ack.acknowledge();
         throw new RuntimeException("test kafka exception");
     }
 
     @DltHandler
-    public void processMessage(Person msgs) {
+    public void processMessage(Person msgs, Acknowledgment ack) {
         log.info("进入死信队列,msg:{}", msgs);
+        ack.acknowledge();
     }
 
 }
