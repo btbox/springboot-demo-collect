@@ -10,6 +10,7 @@
     <modules>
         <module>springboot-demo-pulsar</module>
         <module>springboot-demo-kafka</module>
+        <module>springboot-demo-rocketmq</module>
     </modules>
 
     <properties>

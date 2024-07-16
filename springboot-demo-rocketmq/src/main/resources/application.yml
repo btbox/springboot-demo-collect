@@ -1,0 +1,24 @@
+server:
+  port: 8091
+
+#rocketmq配置
+rocketmq:
+  name-server: 122.228.26.226:60341
+  # 生产者配置
+  producer:
+    # 发送同一类消息的设置为同一个group，保证唯一
+    group: rocketmq-producer-local-group
+    # 发送消息超时时间,默认3000
+    sendMessageTimeout: 3000
+    # 发送消息失败重试次数，默认2
+    retryTimesWhenSendFailed: 3
+    # 异步消息重试此处，默认2
+    retryTimesWhenSendAsyncFailed: 3
+    # 消息最大长度 默认1024*4(4M)
+    maxMessageSize: 4096
+    # 是否在内部发送失败时重试另一个broker，默认false
+    retryNextServer: false
+    # 压缩消息阈值，默认4k(1024 * 4)
+    compressMessageBodyThreshold: 4096
+  consumer:
+    group: rocketmq-consumer-local-group
