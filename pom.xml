@@ -11,6 +11,7 @@
         <module>springboot-demo-pulsar</module>
         <module>springboot-demo-kafka</module>
         <module>springboot-demo-rocketmq</module>
+        <module>springboot-demo-bacnet4j</module>
     </modules>
 
     <properties>
@@ -35,6 +36,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

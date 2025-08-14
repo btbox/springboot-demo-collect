@@ -1,4 +1,4 @@
-package org.btbox.rocketmq.clientapi.domain;
+package org.btbox.rocketmq.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

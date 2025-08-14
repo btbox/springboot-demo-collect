@@ -2,14 +2,12 @@ package org.btbox.rocketmq.clientapi.demo;
 
 
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
-import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.apache.rocketmq.client.consumer.listener.ConsumeOrderlyStatus;
-import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerOrderly;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.MessageQueueSelector;
 import org.apache.rocketmq.common.message.MessageQueue;
-import org.btbox.rocketmq.clientapi.domain.MsgModel;
+import org.btbox.rocketmq.domain.MsgModel;
 import org.btbox.rocketmq.constants.MqConstant;
 import org.junit.jupiter.api.Test;
 import org.apache.rocketmq.common.message.Message;

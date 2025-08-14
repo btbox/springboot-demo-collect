@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.btbox</groupId>
+        <artifactId>springboot-demo-collect</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>springboot-demo-bacnet4j</artifactId>
+
+    <properties>
+        <spring-boot.version>3.2.0</spring-boot.version>
+        <bacnet4j.version>6.0.0</bacnet4j.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.infiniteautomation</groupId>
+            <artifactId>bacnet4j</artifactId>
+            <version>${bacnet4j.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
